@@ -1,513 +1,203 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
+<!-- ========================= -->
+<!-- 2. MINI MANIFESTO -->
+<!-- ========================= -->
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<section id="manifesto" style="
+background:#111;
+padding:140px 20px;
+text-align:center;
+position:relative;
+overflow:hidden;
+">
 
-<title>VVG | Sosyal Etkinlik Topluluğu</title>
+<div style="max-width:900px;margin:auto;">
 
-<meta name="description" content="VVG - Sosyal Etkinlik Topluluğu. Çevreni değiştir, hayatın değişsin.">
-<meta name="keywords" content="VVG, sosyal etkinlik, networking, kamp, seyahat">
+<h2 style="
+font-size:clamp(2.2rem,5vw,4.5rem);
+line-height:1.25;
+font-family:'Playfair Display',serif;
+font-weight:400;
+color:white;
+margin-bottom:35px;
+letter-spacing:-1px;
+">
+“Herkesle değil,<br>
+<span style='color:#D4AF37;'>doğru insanlarla tanış.</span>”
+</h2>
 
-<link rel="canonical" href="https://venividigez.com">
+<div style="
+width:90px;
+height:1px;
+background:#D4AF37;
+margin:0 auto 30px;
+opacity:0.8;
+"></div>
 
-<meta property="og:title" content="VVG | Sıradan Çevrelerden Fazlası">
-<meta property="og:description" content="Çevreni değiştir, hayatın değişsin.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://venividigez.com">
+<p style="
+color:#9f9f9f;
+font-size:1.05rem;
+letter-spacing:1px;
+">
+81 şehir • tek frekans
+</p>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</div>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+</section>
+
+<!-- ========================= -->
+<!-- 3. ATMOSPHERE -->
+<!-- ========================= -->
+
+<section id="atmosphere" style="
+background:#0b0b0b;
+padding:120px 20px;
+overflow:hidden;
+">
+
+<div style="
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+max-width:1400px;
+margin:auto;
+">
+
+<div class="atm-card" style="background:url('assets/images/lounge.jpg') center/cover;height:520px;">
+<div class="atm-overlay">
+<span>Connections</span>
+</div>
+</div>
+
+<div class="atm-card" style="background:url('assets/images/travel.jpg') center/cover;height:520px;">
+<div class="atm-overlay">
+<span>Escape</span>
+</div>
+</div>
+
+<div class="atm-card" style="background:url('assets/images/network.jpg') center/cover;height:520px;">
+<div class="atm-overlay">
+<span>Culture</span>
+</div>
+</div>
+
+<div class="atm-card" style="background:url('assets/images/yacht.jpg') center/cover;height:520px;">
+<div class="atm-overlay">
+<span>Frequency</span>
+</div>
+</div>
+
+</div>
+
+</section>
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
-}
-
-body{
-background:#0b0b0b;
-color:white;
-font-family:'Inter',sans-serif;
-overflow-x:hidden;
-}
-
-a{
-text-decoration:none;
-}
-
-section{
-padding:100px 20px;
-}
-
-.container{
-max-width:1200px;
-margin:auto;
-}
-
-.text-gold{
-color:#D4AF37;
-}
-
-.glass-nav{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-padding:20px 40px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-z-index:9999;
-background:rgba(0,0,0,0.45);
-backdrop-filter:blur(12px);
-border-bottom:1px solid rgba(255,255,255,0.05);
-}
-
-.logo{
-font-size:1.7rem;
-font-family:'Playfair Display',serif;
-letter-spacing:4px;
-color:#D4AF37;
-}
-
-.nav-links{
-display:flex;
-gap:25px;
-align-items:center;
-}
-
-.nav-links a{
-color:white;
-font-size:0.95rem;
-transition:0.3s;
-}
-
-.nav-links a:hover{
-color:#D4AF37;
-}
-
-.btn-outline{
-padding:10px 18px;
-border:1px solid #D4AF37;
-color:#D4AF37;
-border-radius:50px;
-transition:0.3s;
-}
-
-.btn-outline:hover{
-background:#D4AF37;
-color:black;
-}
-
-.hero{
-height:100vh;
-position:relative;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-overflow:hidden;
-}
-
-.hero video{
-position:absolute;
-width:100%;
-height:100%;
-object-fit:cover;
-top:0;
-left:0;
-z-index:-2;
-}
-
-.overlay{
-position:absolute;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.55);
-z-index:-1;
-}
-
-.hero-content{
-max-width:900px;
-padding:20px;
-}
-
-.hero h1{
-font-size:5rem;
-font-family:'Playfair Display',serif;
-font-weight:400;
-line-height:1.1;
-margin-bottom:25px;
-}
-
-.hero p{
-font-size:1.15rem;
-color:#d1d1d1;
-margin-bottom:40px;
-}
-
-.hero-buttons{
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-}
-
-.btn-gold{
-padding:15px 32px;
-background:#D4AF37;
-color:black;
-border-radius:50px;
-font-weight:600;
-transition:0.3s;
-}
-
-.btn-gold:hover{
-transform:translateY(-3px);
-box-shadow:0 10px 30px rgba(212,175,55,0.3);
-}
-
-.btn-glass{
-padding:15px 32px;
-border:1px solid rgba(255,255,255,0.2);
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(10px);
-color:white;
-border-radius:50px;
-transition:0.3s;
-}
-
-.btn-glass:hover{
-border-color:#D4AF37;
-}
-
-.manifesto{
-text-align:center;
-background:#111;
-}
-
-.manifesto h2{
-font-size:3rem;
-font-family:'Playfair Display',serif;
-margin-bottom:20px;
-line-height:1.3;
-}
-
-.manifesto p{
-color:#b1b1b1;
-}
-
-.stats{
-background:#0f0f0f;
-}
-
-.stats-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:40px;
-text-align:center;
-}
-
-.stat-box h3{
-font-size:3rem;
-margin-bottom:10px;
-color:white;
-}
-
-.stat-box p{
-color:#999;
-}
-
-.events-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:30px;
-margin-top:60px;
-}
-
-.event-card{
-background:#161616;
-padding:35px;
-border:1px solid #222;
-transition:0.3s;
+.atm-card{
 position:relative;
 overflow:hidden;
-}
-
-.event-card:hover{
-transform:translateY(-6px);
-border-color:#D4AF37;
-}
-
-.event-date{
-color:#D4AF37;
-font-size:0.85rem;
-letter-spacing:2px;
-margin-bottom:15px;
-}
-
-.event-title{
-font-size:1.5rem;
-margin-bottom:20px;
-}
-
-.event-desc{
-color:#aaa;
-line-height:1.7;
-}
-
-.section-title{
-text-align:center;
-font-size:3rem;
-font-family:'Playfair Display',serif;
-margin-bottom:20px;
-}
-
-.section-sub{
-text-align:center;
-color:#888;
-max-width:700px;
-margin:0 auto 50px;
-}
-
-.countdown{
-text-align:center;
-background:#111;
-border-top:1px solid #222;
-border-bottom:1px solid #222;
-}
-
-#countdown{
-font-size:4rem;
-margin-top:20px;
-}
-
-.testimonials{
-background:#0d0d0d;
-}
-
-.testimonial-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
-}
-
-.testimonial{
-background:#151515;
-border:1px solid #222;
-padding:35px;
-}
-
-.testimonial p{
-line-height:1.8;
-color:#ddd;
-font-style:italic;
-}
-
-.testimonial span{
-display:block;
-margin-top:20px;
-color:#D4AF37;
-}
-
-.apply-section{
-background:#101010;
-text-align:center;
-}
-
-.glass-form{
-max-width:700px;
-margin:auto;
-padding:50px;
-background:rgba(255,255,255,0.03);
+border-radius:10px;
 border:1px solid rgba(255,255,255,0.08);
-backdrop-filter:blur(15px);
+transition:0.5s;
 }
 
-.glass-form h2{
-font-size:2.5rem;
-margin-bottom:20px;
+.atm-card:hover{
+transform:translateY(-8px);
+border-color:#D4AF37;
+}
+
+.atm-card::before{
+content:'';
+position:absolute;
+inset:0;
+background:linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+}
+
+.atm-overlay{
+position:absolute;
+bottom:30px;
+left:30px;
+z-index:2;
+}
+
+.atm-overlay span{
+font-size:2rem;
 font-family:'Playfair Display',serif;
-}
-
-.glass-form p{
-color:#aaa;
-margin-bottom:35px;
-}
-
-.footer{
-padding:70px 20px 40px;
-background:#080808;
-text-align:center;
-border-top:1px solid rgba(255,255,255,0.05);
-}
-
-.footer-links{
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-margin:30px 0;
-}
-
-.footer-links a{
-color:#999;
-}
-
-.footer-links a:hover{
 color:white;
-}
-
-.floating-btn{
-position:fixed;
-bottom:25px;
-right:25px;
-z-index:99999;
-}
-
-.floating-btn a{
-background:#D4AF37;
-color:black;
-padding:15px 25px;
-border-radius:50px;
-font-weight:600;
-box-shadow:0 10px 30px rgba(212,175,55,0.35);
-}
-
-.cursor-glow{
-width:20px;
-height:20px;
-border-radius:50%;
-background:rgba(212,175,55,0.5);
-position:fixed;
-pointer-events:none;
-z-index:999999;
-filter:blur(5px);
-mix-blend-mode:screen;
-}
-
-@media(max-width:768px){
-
-.hero h1{
-font-size:3rem;
-}
-
-.manifesto h2{
-font-size:2rem;
-}
-
-#countdown{
-font-size:2rem;
-}
-
-.glass-nav{
-padding:20px;
-}
-
-.nav-links{
-display:none;
-}
-
 }
 
 </style>
 
-</head>
+<!-- ========================= -->
+<!-- 4. WHY VVG -->
+<!-- ========================= -->
 
-<body>
+<section id="why-vvg" style="
+background:#101010;
+padding:140px 20px;
+">
 
-<div class="cursor-glow" id="cursorGlow"></div>
+<div style="max-width:1200px;margin:auto;">
 
-<nav class="glass-nav">
-
-<div class="logo">VVG</div>
-
-<div class="nav-links">
-<a href="#manifesto">Manifesto</a>
-<a href="#events">Events</a>
-<a href="#journal">Journal</a>
-<a href="#payment">Ödeme</a>
-<a href="#apply" class="btn-outline">Başvuru</a>
-</div>
-
-</nav>
-
-<header class="hero">
-
-<video autoplay muted loop playsinline>
-<source src="assets/videos/acilis.mp4" type="video/mp4">
-</video>
-
-<div class="overlay"></div>
-
-<div class="hero-content">
-
-<h1>
-Çevreni Değiştir,<br>
-<span class="text-gold">Hayatın Değişsin.</span>
-</h1>
-
-<p class="hero-sub">
-Sıradan çevrelerden fazlasını arayanlar için tasarlandı.
-</p>
-
-<div class="hero-buttons">
-<a href="#apply" class="btn-gold">Başvuru Yap</a>
-<a href="#events" class="btn-glass">Etkinlikleri Gör</a>
-</div>
-
-</div>
-
-</header>
-
-<section id="manifesto" class="manifesto">
-
-<div class="container">
-
-<h2>
-“Herkesle değil,<br>
-doğru insanlarla tanış.”
+<h2 style="
+text-align:center;
+font-size:3rem;
+font-family:'Playfair Display',serif;
+margin-bottom:20px;
+">
+Why VVG?
 </h2>
 
+<p style="
+text-align:center;
+color:#888;
+max-width:700px;
+margin:0 auto 70px;
+line-height:1.8;
+">
+Sıradan etkinliklerden fazlası. Aynı frekanstaki insanlarla gerçek bağlar kurabileceğiniz özel bir topluluk deneyimi.
+</p>
+
+<div style="
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+">
+
+<div class="why-card">
+
+<div class="why-icon">✦</div>
+
+<h3>Networking</h3>
+
 <p>
-81 şehir, tek frekans.
+Nitelikli insanlarla aynı ortamda bulun.
 </p>
 
 </div>
 
-</section>
+<div class="why-card">
 
-<section class="stats">
+<div class="why-icon">✦</div>
 
-<div class="container">
+<h3>Experiences</h3>
 
-<div class="stats-grid">
+<p>
+Sıradan planlar yerine unutulmaz deneyimler yaşa.
+</p>
 
-<div class="stat-box">
-<h3>81</h3>
-<p>Şehir</p>
 </div>
 
-<div class="stat-box">
-<h3>12K+</h3>
-<p>Başvuru</p>
-</div>
+<div class="why-card">
 
-<div class="stat-box">
-<h3>430+</h3>
-<p>Etkinlik</p>
-</div>
+<div class="why-icon">✦</div>
 
-<div class="stat-box">
-<h3>Private</h3>
-<p>Community</p>
+<h3>Community</h3>
+
+<p>
+Seni anlayan insanlarla aynı frekansta ol.
+</p>
+
 </div>
 
 </div>
@@ -515,3 +205,182 @@ doğru insanlarla tanış.”
 </div>
 
 </section>
+
+<style>
+
+.why-card{
+background:#151515;
+padding:45px;
+border:1px solid rgba(255,255,255,0.06);
+transition:0.4s;
+border-radius:12px;
+}
+
+.why-card:hover{
+transform:translateY(-6px);
+border-color:#D4AF37;
+box-shadow:0 15px 40px rgba(0,0,0,0.4);
+}
+
+.why-icon{
+font-size:2rem;
+color:#D4AF37;
+margin-bottom:25px;
+}
+
+.why-card h3{
+font-size:1.6rem;
+margin-bottom:18px;
+font-family:'Playfair Display',serif;
+}
+
+.why-card p{
+color:#999;
+line-height:1.8;
+}
+
+</style>
+
+<!-- ========================= -->
+<!-- 5. VVG MOMENTS -->
+<!-- ========================= -->
+
+<section id="moments" style="
+background:#0d0d0d;
+padding:140px 20px;
+">
+
+<div style="max-width:1400px;margin:auto;">
+
+<h2 style="
+text-align:center;
+font-size:3rem;
+font-family:'Playfair Display',serif;
+margin-bottom:20px;
+">
+VVG Moments
+</h2>
+
+<p style="
+text-align:center;
+color:#888;
+margin-bottom:70px;
+">
+Moments become memories.
+</p>
+
+<div style="
+columns:4 280px;
+column-gap:20px;
+">
+
+<img src="assets/images/m1.jpg" class="moment-img">
+<img src="assets/images/m2.jpg" class="moment-img">
+<img src="assets/images/m3.jpg" class="moment-img">
+<img src="assets/images/m4.jpg" class="moment-img">
+<img src="assets/images/m5.jpg" class="moment-img">
+<img src="assets/images/m6.jpg" class="moment-img">
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.moment-img{
+width:100%;
+margin-bottom:20px;
+border-radius:10px;
+transition:0.4s;
+filter:brightness(0.82);
+border:1px solid rgba(255,255,255,0.06);
+}
+
+.moment-img:hover{
+transform:scale(1.02);
+filter:brightness(1);
+border-color:#D4AF37;
+}
+
+</style>
+
+<!-- ========================= -->
+<!-- 6. BIG EVENT COUNTDOWN -->
+<!-- ========================= -->
+
+<section id="countdown" style="
+position:relative;
+padding:180px 20px;
+text-align:center;
+overflow:hidden;
+">
+
+<video autoplay muted loop playsinline style="
+position:absolute;
+inset:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-2;
+">
+<source src="assets/videos/fethiye.mp4" type="video/mp4">
+</video>
+
+<div style="
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.7);
+z-index:-1;
+"></div>
+
+<p style="
+letter-spacing:5px;
+text-transform:uppercase;
+color:#D4AF37;
+margin-bottom:20px;
+">
+Upcoming Escape
+</p>
+
+<h2 id="countdownTimer" style="
+font-size:clamp(2.5rem,8vw,7rem);
+font-weight:600;
+margin-bottom:20px;
+">
+00 : 00 : 00
+</h2>
+
+<p style="
+font-size:1.2rem;
+color:#d1d1d1;
+letter-spacing:2px;
+">
+FETHİYE ESCAPES 2026
+</p>
+
+</section>
+
+<script>
+
+const targetDate = new Date("July 18, 2026 18:00:00").getTime();
+
+setInterval(function(){
+
+const now = new Date().getTime();
+
+const distance = targetDate - now;
+
+const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+document.getElementById("countdownTimer").innerHTML =
+days + "G • " + hours + "S • " + minutes + "D";
+
+},1000);
+
+</script>
