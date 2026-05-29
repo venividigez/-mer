@@ -481,10 +481,8 @@
         }
     }
     window.onload = fetchNotionData;
-</script>
 <script>
-    // Yeni kopyaladığın "Sıradaki Etkinlikler" tablosunun linkini buraya yerleştirdim
-    const NOTION_PAGE_URL = "https://shaded-lyric-539.notion.site/S-radaki-Etkinlikler-36c48bd5f3fe800d886dd34a20c35203";
+    const NOTION_PAGE_URL = "https://shaded-lyric-539.notion.site/S-radaki-Etkinlikler-36c48bd5f3fe00d886dd34a20c35203";
 
     async function fetchNotionData() {
         try {
@@ -501,18 +499,27 @@
             }
 
             data.forEach(item => {
-                // Notion tablonuzdaki muhtemel sütun isimlerine göre (Büyük/küçük harfe duyarlı) eşleme yapıyoruz
-                const title = item.Name || item.Etkinlik || item["Etkinlik Adı"] || 'Yeni Etkinlik';
-                const date = item.Date || item.Tarih || 'Tarih Yakında';
-                const desc = item.Description || item.Açıklama || '';
+                // Ekran görüntündeki Title, Column 1, 2, 3, 4 yapılarını tek tek eşledik
+                const title = item.Title || item.Name || 'Yeni Etkinlik';
+                const date = item["Column 1"] || item.Date || 'Tarih Yakında';
+                const kontenjan = item["Column 2"] || '-';
+                const konum = item["Column 3"] || '-';
+                const kalanKontenjan = item["Column 4"] || '-';
+
+                // Bilgileri kartın içinde premium ve düzenli bir liste yaptık
+                const desc = `
+                    📍 <b>Konum:</b> ${konum}<br>
+                    👥 <b>Toplam Kontenjan:</b> ${kontenjan}<br>
+                    🔥 <b>Kalan Yer:</b> ${kalanKontenjan}
+                `;
 
                 const card = document.createElement('div');
                 card.className = 'event-card';
                 card.innerHTML = `
                     <div class="event-date">${date}</div>
                     <h3 class="event-title">${title}</h3>
-                    <p class="event-desc">${desc}</p>
-                    <a href="#" class="btn">Detayları İncele</a>
+                    <p class="event-desc" style="line-height: 1.8;">${desc}</p>
+                    <a href="#" class="btn" style="margin-top: 10px;">Detayları İncele</a>
                 `;
                 container.appendChild(card);
             });
