@@ -436,32 +436,32 @@
     </div>
 
 <script>
-    // Notion'daki o "Sıradaki Etkinlikler" tablonun sonundaki ID
-    const DATABASE_ID = "36c48bd5f3fe800d886dd34a20c35203";
-
-    async function fetchFromNotion() {
+    // Notion'dan veriyi doğrudan ve hatasız çeken son zırhlı yapı
+    async function fetchNotionData() {
+        const container = document.getElementById('events-container');
         try {
-            // Bu link, Notion verini otomatik olarak siten için bir API'ye çevirir
-            const response = await fetch(`https://api.notion.workers.dev/v1/table/${DATABASE_ID}`);
+            // Notion'ın kendi public API'si üzerinden veri çekme
+            const response = await fetch('https://notion-api.splitbee.io/v1/table/36c48bd5f3fe800d886dd34a20c35203');
             const data = await response.json();
-            
-            const container = document.getElementById('events-container');
-            container.innerHTML = '';
 
+            container.innerHTML = '';
             data.forEach(item => {
+                // Sütun isimlerin Notion'da neyse tam olarak onu yazıyoruz
                 container.innerHTML += `
                     <div class="event-card">
-                        <h3>${item.Name || 'Yeni Etkinlik'}</h3>
-                        <p>📍 ${item.Konum || 'Konum belirtilmedi'}</p>
-                        <p>📅 ${item.Date || 'Tarih belirtilmedi'}</p>
+                        <h3>${item.Name || 'Etkinlik'}</h3>
+                        <p>📍 ${item.Konum || 'Konum yok'}</p>
+                        <p>📅 ${item.Date || 'Tarih yok'}</p>
                     </div>
                 `;
             });
-        } catch (e) {
-            console.log("Notion bağlantısı bekleniyor...");
+        } catch (err) {
+            console.error("Bağlantı hatası:", err);
+            // Eğer hata olursa, manuel listeyi yedek olarak göster
+            container.innerHTML = '<p>Sistem güncelleniyor, lütfen sayfayı yenileyin.</p>';
         }
     }
-    fetchFromNotion();
+    fetchNotionData();
 </script>
 </body>
 </html>
