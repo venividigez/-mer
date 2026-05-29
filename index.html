@@ -509,30 +509,21 @@
 </script>
 <script src="https://apis.google.com/js/api.js"></script>
 <script>
-    // VVG Otomatik Takvim Entegrasyonu
-    async function loadEvents() {
-        const container = document.getElementById('events-container');
-        const calendarId = "venividigez@gmail.com";
-        const apiKey = "YOUR_GOOGLE_API_KEY"; // Buraya Google Cloud Console'dan alacağın bir API KEY eklemen gerekecek
+    <section id="calendar-section" style="background-color: #121212; padding: 40px 20px; text-align: center;">
+    <details style="max-width: 800px; margin: 0 auto; border: 1px solid #333; background: #1a1a1a; cursor: pointer; transition: 0.3s;">
         
-        // Şimdilik tasarımın bozulmaması için statik bir yapı kuruyoruz.
-        // Google API Key aldığında bu fetch yapısı tamamen otomatikleşecek.
-        console.log("Takvim verisi " + calendarId + " üzerinden senkronize ediliyor.");
+        <summary style="padding: 20px; color: #C5A059; font-family: 'Playfair Display', serif; font-size: 1.2rem; outline: none; list-style: none; letter-spacing: 2px;">
+            ETKİNLİK TAKVİMİNİ GÖRÜNTÜLE ▾
+        </summary>
+
+        <div class="calendar-wrapper" style="padding: 20px; background: #121212;">
+            <iframe src="https://calendar.google.com/calendar/embed?src=venividigez%40gmail.com&ctz=Europe%2FIstanbul" 
+                    style="border: 0; filter: invert(90%) hue-rotate(180deg) brightness(1.2);" 
+                    width="100%" height="500" frameborder="0" scrolling="no">
+            </iframe>
+        </div>
         
-        // Tasarımın sabit kalması için etkinlik kartlarını buraya güncelleyebilirsin
-        // Şimdilik takvimdeki etkinlikleri buraya manuel ekleyerek sistemi test edebilirsin.
-    }
-    loadEvents();
-</script>
-<section id="calendar-section" style="background-color: #121212; padding: 50px 20px; text-align: center;">
-    <h2 style="color: #C5A059; margin-bottom: 30px; letter-spacing: 4px; text-transform: uppercase;">ETKİNLİK TAKVİMİ</h2>
-    
-    <div class="calendar-wrapper" style="max-width: 800px; margin: 0 auto; border: 1px solid #333; padding: 10px; background: #1a1a1a;">
-        <iframe src="https://calendar.google.com/calendar/embed?src=venividigez%40gmail.com&ctz=Europe%2FIstanbul" 
-                style="border: 0; filter: invert(90%) hue-rotate(180deg) brightness(1.2);" 
-                width="100%" height="500" frameborder="0" scrolling="no">
-        </iframe>
-    </div>
+    </details>
 </section>
 </body>
 </html>
