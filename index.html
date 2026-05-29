@@ -1,1105 +1,517 @@
-# VVG Premium Index.html
-
-```html
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>VVG | Sosyal Etkinlik Topluluğu</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="VVG - Sosyal etkinlik, networking, seyahat, kamp ve premium topluluk deneyimleri.">
-    <meta name="keywords" content="VVG, sosyal etkinlik, networking, kamp, seyahat, trekking">
+<title>VVG | Sosyal Etkinlik Topluluğu</title>
 
-    <meta property="og:title" content="VVG | Sıradan Çevrelerden Fazlası">
-    <meta property="og:description" content="Çevreni Değiştir, Hayatın Değişsin.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://venividigez.com">
-    <meta property="og:image" content="assets/images/og-image.jpg">
+<meta name="description" content="VVG - Sosyal Etkinlik Topluluğu. Çevreni değiştir, hayatın değişsin.">
+<meta name="keywords" content="VVG, sosyal etkinlik, networking, kamp, seyahat">
 
-    <link rel="canonical" href="https://venividigez.com">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="canonical" href="https://venividigez.com">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta property="og:title" content="VVG | Sıradan Çevrelerden Fazlası">
+<meta property="og:description" content="Çevreni değiştir, hayatın değişsin.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://venividigez.com">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background: #121212;
-            color: #fff;
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* NAVBAR */
-
-        .glass-nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 9999;
-            background: rgba(18,18,18,0.7);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .nav-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 20px 0;
-        }
-
-        .logo {
-            color: #fff;
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: 3px;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-        }
-
-        .nav-links a {
-            color: #fff;
-            font-size: 0.9rem;
-            transition: 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: #D4AF37;
-        }
-
-        .btn-outline {
-            padding: 10px 18px;
-            border: 1px solid #D4AF37;
-            border-radius: 4px;
-            color: #D4AF37 !important;
-        }
-
-        .menu-btn {
-            display: none;
-            color: #D4AF37;
-            font-size: 1.8rem;
-            cursor: pointer;
-        }
-
-        /* HERO */
-
-        .hero {
-            position: relative;
-            height: 100vh;
-            overflow: hidden;
-        }
-
-        .video-container {
-            position: absolute;
-            inset: 0;
-        }
-
-        .video-container video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .video-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0,0,0,0.45);
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
-            background-size: 3px 3px;
-            pointer-events: none;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .hero-title {
-            font-size: 4.8rem;
-            line-height: 1.1;
-            font-family: 'Playfair Display', serif;
-            margin-bottom: 25px;
-        }
-
-        .text-gold {
-            color: #D4AF37;
-        }
-
-        .hero-sub {
-            color: #d1d1d1;
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin-bottom: 35px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 18px;
-            flex-wrap: wrap;
-        }
-
-        .btn-gold,
-        .btn-glass {
-            padding: 14px 28px;
-            border-radius: 4px;
-            transition: 0.3s ease;
-            font-weight: 500;
-        }
-
-        .btn-gold {
-            background: #D4AF37;
-            color: #121212;
-        }
-
-        .btn-glass {
-            border: 1px solid rgba(255,255,255,0.2);
-            color: #fff;
-            background: rgba(255,255,255,0.03);
-            backdrop-filter: blur(10px);
-        }
-
-        .btn-gold:hover,
-        .btn-glass:hover {
-            transform: translateY(-4px);
-        }
-
-        /* MANIFESTO */
-
-        .manifesto {
-            padding: 140px 20px;
-            text-align: center;
-        }
-
-        .manifesto h2 {
-            font-size: 3.2rem;
-            line-height: 1.4;
-            font-family: 'Playfair Display', serif;
-            margin-bottom: 25px;
-        }
-
-        .manifesto p {
-            color: #a1a1a6;
-            font-size: 1.05rem;
-        }
-
-        /* CLOCK */
-
-        .clock-wrapper {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-
-        .clock-title {
-            color: #D4AF37;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            margin-bottom: 10px;
-        }
-
-        #vvg-clock {
-            font-size: 1.7rem;
-            letter-spacing: 3px;
-        }
-
-        /* EVENTS */
-
-        .events-section {
-            padding: 40px 20px 120px;
-        }
-
-        .section-title {
-            text-align: center;
-            color: #D4AF37;
-            letter-spacing: 5px;
-            margin-bottom: 60px;
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-        }
-
-        .events-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        .event-card {
-            background: #1a1a1a;
-            border: 1px solid #333;
-            border-radius: 10px;
-            padding: 35px;
-            transition: 0.35s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .event-card:hover {
-            transform: translateY(-8px);
-            border-color: #D4AF37;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.35);
-        }
-
-        .event-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: #D4AF37;
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: 0.35s ease;
-        }
-
-        .event-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .event-date {
-            color: #D4AF37;
-            font-size: 0.85rem;
-            margin-bottom: 18px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .event-title {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
-
-        .event-desc {
-            color: #a1a1a6;
-            line-height: 1.8;
-            margin-bottom: 25px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 24px;
-            border: 1px solid #D4AF37;
-            border-radius: 4px;
-            color: #D4AF37;
-            transition: 0.3s ease;
-        }
-
-        .btn:hover {
-            background: #D4AF37;
-            color: #121212;
-        }
-
-        .loading {
-            text-align: center;
-            color: #888;
-        }
-
-        /* JOURNAL */
-
-        .journal {
-            padding: 120px 20px;
-        }
-
-        .journal-grid {
-            display: grid;
-            gap: 35px;
-        }
-
-        .journal-card {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            background: #1a1a1a;
-            border: 1px solid #333;
-            overflow: hidden;
-            border-radius: 8px;
-        }
-
-        .journal-card.reverse {
-            grid-template-columns: 1.2fr 1fr;
-        }
-
-        .journal-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .journal-content {
-            padding: 45px;
-        }
-
-        .journal-date {
-            color: #D4AF37;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-        }
-
-        .journal-content h3 {
-            margin: 18px 0;
-            font-size: 2rem;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .journal-content p {
-            color: #a1a1a6;
-            line-height: 1.8;
-            margin-bottom: 25px;
-        }
-
-        /* APPLY */
-
-        .apply-section {
-            padding: 120px 20px;
-            text-align: center;
-        }
-
-        .glass-box {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 60px 40px;
-            border-radius: 14px;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.08);
-            backdrop-filter: blur(12px);
-        }
-
-        .glass-box h2 {
-            color: #D4AF37;
-            margin-bottom: 20px;
-            font-family: 'Playfair Display', serif;
-            font-size: 2.4rem;
-        }
-
-        .glass-box p {
-            color: #a1a1a6;
-            line-height: 1.8;
-        }
-
-        /* FOOTER */
-
-        footer {
-            background: #0a0a0a;
-            padding: 70px 20px 35px;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            text-align: center;
-        }
-
-        .footer-logo {
-            color: #D4AF37;
-            font-size: 2rem;
-            letter-spacing: 5px;
-            margin-bottom: 25px;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-bottom: 30px;
-        }
-
-        .footer-links a {
-            color: #a1a1a6;
-            transition: 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: #fff;
-        }
-
-        .copyright {
-            color: rgba(255,255,255,0.3);
-            font-size: 0.85rem;
-            line-height: 1.8;
-        }
-
-        /* MOBILE */
-
-        #mobileMenu {
-            position: fixed;
-            inset: 0;
-            background: #121212;
-            z-index: 99999;
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 35px;
-        }
-
-        #mobileMenu a {
-            color: #fff;
-            font-size: 2rem;
-        }
-
-        @media(max-width: 992px) {
-
-            .journal-card,
-            .journal-card.reverse {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-title {
-                font-size: 3.2rem;
-            }
-
-            .manifesto h2 {
-                font-size: 2.5rem;
-            }
-        }
-
-        @media(max-width: 768px) {
-
-            .nav-links a {
-                display: none;
-            }
-
-            .menu-btn {
-                display: block;
-            }
-
-            .hero-title {
-                font-size: 2.5rem;
-            }
-
-            .manifesto h2 {
-                font-size: 2rem;
-            }
-
-            .journal-content {
-                padding: 30px;
-            }
-
-            .glass-box {
-                padding: 45px 25px;
-            }
-        }
-
-    </style>
-</head>
-<body>
-
-    <!-- NAVBAR -->
-
-    <nav class="glass-nav">
-
-        <div class="container nav-inner">
-
-            <div class="logo">
-                VVG
-            </div>
-
-            <div class="nav-links">
-                <a href="#manifesto">Manifesto</a>
-                <a href="#events">Etkinlikler</a>
-                <a href="#journal">Journal</a>
-                <a href="#apply" class="btn-outline">Başvuru</a>
-            </div>
-
-            <div class="menu-btn" onclick="toggleMenu()">
-                ☰
-            </div>
-
-        </div>
-
-    </nav>
-
-    <!-- MOBILE MENU -->
-
-    <div id="mobileMenu">
-
-        <div onclick="toggleMenu()"
-            style="position:absolute;top:30px;right:30px;font-size:2rem;color:#D4AF37;cursor:pointer;">
-            ✕
-        </div>
-
-        <a href="#manifesto" onclick="toggleMenu()">Manifesto</a>
-        <a href="#events" onclick="toggleMenu()">Etkinlikler</a>
-        <a href="#journal" onclick="toggleMenu()">Journal</a>
-        <a href="#apply" onclick="toggleMenu()">Başvuru</a>
-
-    </div>
-
-    <!-- HERO -->
-
-    <header class="hero">
-
-        <div class="video-container">
-            <video src="assets/videos/acilis.mp4" autoplay muted loop playsinline preload="metadata"></video>
-            <div class="video-overlay"></div>
-        </div>
-
-        <div class="hero-content">
-
-            <h1 class="hero-title">
-                Çevreni Değiştir,<br>
-                <span class="text-gold">Hayatın Değişsin.</span>
-            </h1>
-
-            <p class="hero-sub">
-                Sıradan bir etkinlik değil, seçkin bir yaşam tarzı.
-            </p>
-
-            <div class="hero-buttons">
-                <a href="#apply" class="btn-gold">Başvuru Yap</a>
-                <a href="#events" class="btn-glass">Etkinlikleri Gör</a>
-            </div>
-
-        </div>
-
-    </header>
-
-    <!-- MANIFESTO -->
-
-    <section id="manifesto" class="manifesto">
-
-        <div class="container">
-
-            <h2>
-                “Herkesle değil,<br>
-                doğru insanlarla tanış.”
-            </h2>
-
-            <p>
-                81 şehir, tek frekans.
-            </p>
-
-        </div>
-
-    </section>
-
-    <!-- CLOCK -->
-
-    <div class="clock-wrapper">
-
-        <div class="clock-title">
-            VVG ZAMANI
-        </div>
-
-        <div id="vvg-clock">
-            00:00
-        </div>
-
-    </div>
-
-    <!-- EVENTS -->
-
-    <section id="events" class="events-section">
-
-        <div class="container">
-
-            <h2 class="section-title">
-                SIRADAKİ ETKİNLİKLER
-            </h2>
-
-            <div class="events-grid" id="events-container">
-
-                <p class="loading">
-                    Etkinlik takvimi güncelleniyor...
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- JOURNAL -->
-
-    <section id="journal" class="journal">
-
-        <div class="container">
-
-            <h2 class="section-title">
-                VVG JOURNAL
-            </h2>
-
-            <div class="journal-grid">
-
-                <div class="journal-card">
-
-                    <div class="journal-content">
-
-                        <div class="journal-date">
-                            28 MAYIS 2026
-                        </div>
-
-                        <h3>
-                            Bireyden Topluluğa
-                        </h3>
-
-                        <p>
-                            Modern dünyada bağlantıda olmak ile gerçekten etkileşimde olmak aynı şey değildir.
-                        </p>
-
-                        <a href="#" class="btn">
-                            Okumaya Devam Et
-                        </a>
-
-                    </div>
-
-                    <img src="assets/images/lounge.jpg" alt="VVG Lounge">
-
-                </div>
-
-                <div class="journal-card reverse">
-
-                    <img src="assets/images/travel.jpg" alt="VVG Travel">
-
-                    <div class="journal-content">
-
-                        <div class="journal-date">
-                            20 MAYIS 2026
-                        </div>
-
-                        <h3>
-                            Sınırların Ötesinde
-                        </h3>
-
-                        <p>
-                            Gezmek yalnızca hareket etmek değil, zihinsel sınırlarını genişletmektir.
-                        </p>
-
-                        <a href="#" class="btn">
-                            Okumaya Devam Et
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- CALENDAR -->
-
-    <section style="padding: 0 20px 120px;">
-
-        <div class="container">
-
-            <details style="border:1px solid #333;background:#1a1a1a;border-radius:8px;overflow:hidden;">
-
-                <summary style="padding:25px;color:#D4AF37;cursor:pointer;letter-spacing:2px;">
-                    ETKİNLİK TAKVİMİNİ GÖRÜNTÜLE ▾
-                </summary>
-
-                <div style="padding:20px;">
-
-                    <iframe
-                        src="https://calendar.google.com/calendar/embed?src=venividigez%40gmail.com&ctz=Europe%2FIstanbul"
-                        style="border:0;filter:invert(90%) hue-rotate(180deg) brightness(1.2);"
-                        width="100%"
-                        height="500"
-                        frameborder="0"
-                        scrolling="no">
-                    </iframe>
-
-                </div>
-
-            </details>
-
-        </div>
-
-    </section>
-
-    <!-- APPLY -->
-
-    <section id="apply" class="apply-section">
-
-        <div class="glass-box">
-
-            <h2>
-                Topluluğa Katıl
-            </h2>
-
-            <p>
-                VVG herkese açık değildir. Başvurular yönetim ekibimiz tarafından değerlendirilmektedir.
-            </p>
-
-            <a href="https://forms.gle/AvxsHnuWCu1ib8Dw6"
-                target="_blank"
-                class="btn"
-                style="margin-top:30px;">
-                Başvuru Formunu Aç
-            </a>
-
-        </div>
-
-    </section>
-
-<!-- 6. Bağış ve Ödemeler -->
-<section id="payment" class="apply-section" style="padding-top: 50px;">
-    <div class="glass-form-container gsap-reveal">
-        <h2 class="text-gold">Bağış ve Ödemeler</h2>
-        <p>Tüm ödemeler, Veni Vidi Gez Derneği resmi hesabına BAĞIŞ olarak yapılmaktadır.</p>
-
-        <details style="margin-top: 30px; background: rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:12px; overflow:hidden;">
-            <summary style="padding:20px; cursor:pointer; color:#D4AF37; font-size:1.05rem;">
-                Hesap Bilgilerini Göster / Gizle
-            </summary>
-
-            <div style="padding:25px; border-top:1px solid rgba(255,255,255,0.05);">
-                <p style="color:#a1a1a6; font-size:0.85rem; letter-spacing:1px;">HESAP SAHİBİ</p>
-                <p style="color:#fff; font-size:1.1rem; margin-bottom:20px;">Veni Vidi Gez Derneği</p>
-
-                <p style="color:#a1a1a6; font-size:0.85rem; letter-spacing:1px;">IBAN</p>
-                <div style="padding:12px 0; border-bottom:1px solid rgba(212,175,55,0.3);">
-                    <span style="color:#D4AF37; font-family:monospace; font-size:1.05rem; letter-spacing:1px;">
-                        TR91 0001 0023 5197 9988 3650 01
-                    </span>
-                </div>
-
-                <div style="margin-top:20px; background:rgba(212,175,55,0.05); border-left:3px solid #D4AF37; padding:15px; border-radius:4px;">
-                    <p style="color:#fff; margin-bottom:8px;">🏷️ Açıklama: Ad Soyad + BAĞIŞ</p>
-                    <p style="color:#a1a1a6; font-size:0.9rem; line-height:1.6;">
-                        Bağış makbuzu oluşturulabilmesi için açıklama kısmı zorunludur.
-                    </p>
-                </div>
-            </div>
-        </details>
-    </div>
-</section>
-
-<!-- WhatsApp Butonu -->
-<div style="text-align:center; margin:60px 0;">
-    <a href="https://wa.me/905072764100?text=Merhaba, VVG topluluğu hakkında bilgi almak istiyorum."
-       target="_blank"
-       style="display:inline-block; padding:16px 34px; border:1px solid #C5A059; color:#C5A059; text-decoration:none; letter-spacing:2px; transition:0.3s;">
-       BİZE ULAŞIN
-    </a>
-</div>
-
-<!-- Footer -->
-<footer style="background:#0a0a0a; padding:60px 20px 30px; border-top:1px solid rgba(255,255,255,0.05); text-align:center;">
-    <h2 style="color:#D4AF37; font-family:'Playfair Display', serif; letter-spacing:4px; margin-bottom:25px;">VVG</h2>
-
-    <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin-bottom:25px;">
-        <a href="https://www.instagram.com/veni_vidi_gez" target="_blank" style="color:#a1a1a6; text-decoration:none;">Instagram</a>
-        <span style="color:#333;">|</span>
-        <a href="https://youtube.com/@veni_vidi_gez" target="_blank" style="color:#a1a1a6; text-decoration:none;">YouTube</a>
-        <span style="color:#333;">|</span>
-        <a href="https://www.linkedin.com/company/venividigez/" target="_blank" style="color:#a1a1a6; text-decoration:none;">LinkedIn</a>
-        <span style="color:#333;">|</span>
-        <a href="mailto:venividigez@gmail.com" style="color:#D4AF37; text-decoration:none;">venividigez@gmail.com</a>
-    </div>
-
-    <p style="color:rgba(255,255,255,0.3); font-size:0.8rem; line-height:1.8;">
-        © 2026 Veni Vidi Gez — Tüm Hakları Saklıdır.<br>
-        KVKK & Gizlilik Politikası
-    </p>
-</footer>
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        <div class="footer-logo">
-            VVG
-        </div>
-
-        <div class="footer-links">
-            <a href="https://www.instagram.com/veni_vidi_gez" target="_blank">Instagram</a>
-            <a href="https://youtube.com/@veni_vidi_gez" target="_blank">YouTube</a>
-            <a href="https://www.linkedin.com/company/venividigez/" target="_blank">LinkedIn</a>
-        </div>
-
-        <div class="copyright">
-            © 2026 Veni Vidi Gez<br>
-            Tüm Hakları Saklıdır.
-        </div>
-
-    </footer>
-
-    <!-- JAVASCRIPT -->
-
-    <script>
-
-        function toggleMenu() {
-
-            const menu = document.getElementById('mobileMenu');
-
-            if (menu.style.display === 'flex') {
-                menu.style.display = 'none';
-            } else {
-                menu.style.display = 'flex';
-            }
-        }
-
-        function updateVVGClock() {
-
-            const now = new Date();
-
-            const timeString = now.toLocaleTimeString('tr-TR', {
-                hour: '2-digit',
-                minute: '2-digit'
-            });
-
-            document.getElementById('vvg-clock').innerHTML = timeString;
-        }
-
-        setInterval(updateVVGClock, 1000);
-        updateVVGClock();
-
-        async function loadEvents() {
-
-            const container = document.getElementById('events-container');
-
-            try {
-
-                const response = await fetch(
-                    'https://notion-api.splitbee.io/v1/table/36c48bd5f3fe800d886dd34a20c35203'
-                );
-
-                const events = await response.json();
-
-                container.innerHTML = '';
-
-                events.forEach(event => {
-
-                    if (event.Name) {
-
-                        container.innerHTML += `
-
-                        <div class="event-card">
-
-                            <div class="event-date">
-                                ${event.Date || 'Tarih Belirtilmemiş'}
-                            </div>
-
-                            <h3 class="event-title">
-                                ${event.Name}
-                            </h3>
-
-                            <p class="event-desc">
-                                📍 Konum: ${event["Column 3"] || '-'}<br>
-                                👥 Kontenjan: ${event.Description || '-'}<br>
-                                🔥 Kalan: ${event["Column 4"] || '-'}
-                            </p>
-
-                            <a href="#apply" class="btn">
-                                Başvur
-                            </a>
-
-                        </div>
-                        `;
-                    }
-                });
-
-            } catch (error) {
-
-                console.error(error);
-
-                container.innerHTML = `
-                    <p class="loading">
-                        Etkinlikler şu an güncelleniyor...
-                    </p>
-                `;
-            }
-        }
-
-        window.addEventListener('load', loadEvents);
-
-    </script>
-
-
-
-<!-- PREMIUM FLOATING CTA -->
-<div id="floating-cta" style="position:fixed; bottom:20px; right:20px; z-index:99999;">
-  <a href="#apply" style="background:#C5A059; color:#121212; padding:14px 24px; border-radius:50px; text-decoration:none; font-weight:600; box-shadow:0 10px 30px rgba(197,160,89,0.35);">
-    Başvuru Yap
-  </a>
-</div>
-
-<!-- PREMIUM STATS -->
-<section style="padding:100px 20px; background:#0f0f0f; text-align:center;">
-  <h2 style="color:#D4AF37; letter-spacing:4px; margin-bottom:60px;">VVG IN NUMBERS</h2>
-
-  <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:30px; max-width:1000px; margin:0 auto;">
-    <div>
-      <h3 style="font-size:3rem; color:#fff;">81</h3>
-      <p style="color:#a1a1a6;">Şehir</p>
-    </div>
-
-    <div>
-      <h3 style="font-size:3rem; color:#fff;">12K+</h3>
-      <p style="color:#a1a1a6;">Başvuru</p>
-    </div>
-
-    <div>
-      <h3 style="font-size:3rem; color:#fff;">430+</h3>
-      <p style="color:#a1a1a6;">Etkinlik</p>
-    </div>
-
-    <div>
-      <h3 style="font-size:3rem; color:#fff;">Private</h3>
-      <p style="color:#a1a1a6;">Community</p>
-    </div>
-  </div>
-</section>
-
-<!-- COUNTDOWN -->
-<section style="padding:80px 20px; background:#121212; text-align:center; border-top:1px solid #222; border-bottom:1px solid #222;">
-  <p style="color:#D4AF37; letter-spacing:3px; margin-bottom:20px;">FETHİYE ESCAPES</p>
-  <h2 id="countdown" style="font-size:3rem; color:#fff;">00 Gün 00 Saat 00 Dakika</h2>
-</section>
-
-<!-- TESTIMONIALS -->
-<section style="padding:100px 20px; background:#0a0a0a;">
-  <h2 style="text-align:center; color:#D4AF37; margin-bottom:60px; letter-spacing:4px;">VVG EXPERIENCES</h2>
-
-  <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px; max-width:1100px; margin:0 auto;">
-
-    <div style="padding:30px; border:1px solid #222; background:#151515;">
-      <p style="color:#fff; line-height:1.8; font-style:italic;">“Uzun zamandır ilk kez gerçekten aynı frekansta insanlarla tanıştım.”</p>
-      <span style="color:#C5A059; display:block; margin-top:20px;">— VVG Member</span>
-    </div>
-
-    <div style="padding:30px; border:1px solid #222; background:#151515;">
-      <p style="color:#fff; line-height:1.8; font-style:italic;">“Sıradan sosyal çevrelerden tamamen farklı bir atmosfer.”</p>
-      <span style="color:#C5A059; display:block; margin-top:20px;">— Istanbul Networking</span>
-    </div>
-
-    <div style="padding:30px; border:1px solid #222; background:#151515;">
-      <p style="color:#fff; line-height:1.8; font-style:italic;">“VVG sadece etkinlik değil, gerçekten yaşam tarzı.”</p>
-      <span style="color:#C5A059; display:block; margin-top:20px;">— Fethiye Escapes</span>
-    </div>
-  </div>
-</section>
-
-<!-- DYNAMIC QUOTES -->
-<script>
-const quotes = [
-  'Kalabalıklar içinde de yalnızdır insan.',
-  'Herkesle değil, doğru insanlarla tanış.',
-  'Çevreni değiştir, hayatın değişsin.',
-  'Sıradan çevrelerden fazlası.'
-];
-
-setInterval(() => {
-  const random = quotes[Math.floor(Math.random() * quotes.length)];
-  const heroSub = document.querySelector('.hero-sub');
-  if(heroSub){
-    heroSub.innerText = random;
-  }
-}, 5000);
-</script>
-
-<!-- COUNTDOWN SCRIPT -->
-<script>
-const targetDate = new Date('2026-07-15T00:00:00').getTime();
-
-setInterval(() => {
-  const now = new Date().getTime();
-  const distance = targetDate - now;
-
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-
-  const el = document.getElementById('countdown');
-  if(el){
-    el.innerHTML = `${days} Gün ${hours} Saat ${minutes} Dakika`;
-  }
-}, 1000);
-</script>
-
-<!-- PREMIUM CURSOR -->
 <style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
 body{
-  cursor:none;
+background:#0b0b0b;
+color:white;
+font-family:'Inter',sans-serif;
+overflow-x:hidden;
+}
+
+a{
+text-decoration:none;
+}
+
+section{
+padding:100px 20px;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+}
+
+.text-gold{
+color:#D4AF37;
+}
+
+.glass-nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:20px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:9999;
+background:rgba(0,0,0,0.45);
+backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.logo{
+font-size:1.7rem;
+font-family:'Playfair Display',serif;
+letter-spacing:4px;
+color:#D4AF37;
+}
+
+.nav-links{
+display:flex;
+gap:25px;
+align-items:center;
+}
+
+.nav-links a{
+color:white;
+font-size:0.95rem;
+transition:0.3s;
+}
+
+.nav-links a:hover{
+color:#D4AF37;
+}
+
+.btn-outline{
+padding:10px 18px;
+border:1px solid #D4AF37;
+color:#D4AF37;
+border-radius:50px;
+transition:0.3s;
+}
+
+.btn-outline:hover{
+background:#D4AF37;
+color:black;
+}
+
+.hero{
+height:100vh;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+overflow:hidden;
+}
+
+.hero video{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+top:0;
+left:0;
+z-index:-2;
+}
+
+.overlay{
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.55);
+z-index:-1;
+}
+
+.hero-content{
+max-width:900px;
+padding:20px;
+}
+
+.hero h1{
+font-size:5rem;
+font-family:'Playfair Display',serif;
+font-weight:400;
+line-height:1.1;
+margin-bottom:25px;
+}
+
+.hero p{
+font-size:1.15rem;
+color:#d1d1d1;
+margin-bottom:40px;
+}
+
+.hero-buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn-gold{
+padding:15px 32px;
+background:#D4AF37;
+color:black;
+border-radius:50px;
+font-weight:600;
+transition:0.3s;
+}
+
+.btn-gold:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 30px rgba(212,175,55,0.3);
+}
+
+.btn-glass{
+padding:15px 32px;
+border:1px solid rgba(255,255,255,0.2);
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
+color:white;
+border-radius:50px;
+transition:0.3s;
+}
+
+.btn-glass:hover{
+border-color:#D4AF37;
+}
+
+.manifesto{
+text-align:center;
+background:#111;
+}
+
+.manifesto h2{
+font-size:3rem;
+font-family:'Playfair Display',serif;
+margin-bottom:20px;
+line-height:1.3;
+}
+
+.manifesto p{
+color:#b1b1b1;
+}
+
+.stats{
+background:#0f0f0f;
+}
+
+.stats-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:40px;
+text-align:center;
+}
+
+.stat-box h3{
+font-size:3rem;
+margin-bottom:10px;
+color:white;
+}
+
+.stat-box p{
+color:#999;
+}
+
+.events-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+margin-top:60px;
+}
+
+.event-card{
+background:#161616;
+padding:35px;
+border:1px solid #222;
+transition:0.3s;
+position:relative;
+overflow:hidden;
+}
+
+.event-card:hover{
+transform:translateY(-6px);
+border-color:#D4AF37;
+}
+
+.event-date{
+color:#D4AF37;
+font-size:0.85rem;
+letter-spacing:2px;
+margin-bottom:15px;
+}
+
+.event-title{
+font-size:1.5rem;
+margin-bottom:20px;
+}
+
+.event-desc{
+color:#aaa;
+line-height:1.7;
+}
+
+.section-title{
+text-align:center;
+font-size:3rem;
+font-family:'Playfair Display',serif;
+margin-bottom:20px;
+}
+
+.section-sub{
+text-align:center;
+color:#888;
+max-width:700px;
+margin:0 auto 50px;
+}
+
+.countdown{
+text-align:center;
+background:#111;
+border-top:1px solid #222;
+border-bottom:1px solid #222;
+}
+
+#countdown{
+font-size:4rem;
+margin-top:20px;
+}
+
+.testimonials{
+background:#0d0d0d;
+}
+
+.testimonial-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.testimonial{
+background:#151515;
+border:1px solid #222;
+padding:35px;
+}
+
+.testimonial p{
+line-height:1.8;
+color:#ddd;
+font-style:italic;
+}
+
+.testimonial span{
+display:block;
+margin-top:20px;
+color:#D4AF37;
+}
+
+.apply-section{
+background:#101010;
+text-align:center;
+}
+
+.glass-form{
+max-width:700px;
+margin:auto;
+padding:50px;
+background:rgba(255,255,255,0.03);
+border:1px solid rgba(255,255,255,0.08);
+backdrop-filter:blur(15px);
+}
+
+.glass-form h2{
+font-size:2.5rem;
+margin-bottom:20px;
+font-family:'Playfair Display',serif;
+}
+
+.glass-form p{
+color:#aaa;
+margin-bottom:35px;
+}
+
+.footer{
+padding:70px 20px 40px;
+background:#080808;
+text-align:center;
+border-top:1px solid rgba(255,255,255,0.05);
+}
+
+.footer-links{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin:30px 0;
+}
+
+.footer-links a{
+color:#999;
+}
+
+.footer-links a:hover{
+color:white;
+}
+
+.floating-btn{
+position:fixed;
+bottom:25px;
+right:25px;
+z-index:99999;
+}
+
+.floating-btn a{
+background:#D4AF37;
+color:black;
+padding:15px 25px;
+border-radius:50px;
+font-weight:600;
+box-shadow:0 10px 30px rgba(212,175,55,0.35);
 }
 
 .cursor-glow{
-  width:20px;
-  height:20px;
-  border-radius:50%;
-  background:rgba(197,160,89,0.5);
-  position:fixed;
-  pointer-events:none;
-  z-index:999999;
-  mix-blend-mode:screen;
-  filter:blur(4px);
+width:20px;
+height:20px;
+border-radius:50%;
+background:rgba(212,175,55,0.5);
+position:fixed;
+pointer-events:none;
+z-index:999999;
+filter:blur(5px);
+mix-blend-mode:screen;
 }
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:3rem;
+}
+
+.manifesto h2{
+font-size:2rem;
+}
+
+#countdown{
+font-size:2rem;
+}
+
+.glass-nav{
+padding:20px;
+}
+
+.nav-links{
+display:none;
+}
+
+}
+
 </style>
+
+</head>
+
+<body>
 
 <div class="cursor-glow" id="cursorGlow"></div>
 
-<script>
-const cursor = document.getElementById('cursorGlow');
+<nav class="glass-nav">
 
-window.addEventListener('mousemove', e => {
-  cursor.style.left = e.clientX + 'px';
-  cursor.style.top = e.clientY + 'px';
-});
-</script>
+<div class="logo">VVG</div>
 
-<!-- SCROLL REVEAL -->
-<script>
-const reveals = document.querySelectorAll('.gsap-reveal');
+<div class="nav-links">
+<a href="#manifesto">Manifesto</a>
+<a href="#events">Events</a>
+<a href="#journal">Journal</a>
+<a href="#payment">Ödeme</a>
+<a href="#apply" class="btn-outline">Başvuru</a>
+</div>
 
-window.addEventListener('scroll', () => {
-  reveals.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if(top < window.innerHeight - 100){
-      el.style.opacity = '1';
-      el.style.transform = 'translateY(0px)';
-      el.style.transition = 'all 1s ease';
-    }
-  });
-});
-</script>
+</nav>
 
-</body>
-</html>
-```
+<header class="hero">
+
+<video autoplay muted loop playsinline>
+<source src="assets/videos/acilis.mp4" type="video/mp4">
+</video>
+
+<div class="overlay"></div>
+
+<div class="hero-content">
+
+<h1>
+Çevreni Değiştir,<br>
+<span class="text-gold">Hayatın Değişsin.</span>
+</h1>
+
+<p class="hero-sub">
+Sıradan çevrelerden fazlasını arayanlar için tasarlandı.
+</p>
+
+<div class="hero-buttons">
+<a href="#apply" class="btn-gold">Başvuru Yap</a>
+<a href="#events" class="btn-glass">Etkinlikleri Gör</a>
+</div>
+
+</div>
+
+</header>
+
+<section id="manifesto" class="manifesto">
+
+<div class="container">
+
+<h2>
+“Herkesle değil,<br>
+doğru insanlarla tanış.”
+</h2>
+
+<p>
+81 şehir, tek frekans.
+</p>
+
+</div>
+
+</section>
+
+<section class="stats">
+
+<div class="container">
+
+<div class="stats-grid">
+
+<div class="stat-box">
+<h3>81</h3>
+<p>Şehir</p>
+</div>
+
+<div class="stat-box">
+<h3>12K+</h3>
+<p>Başvuru</p>
+</div>
+
+<div class="stat-box">
+<h3>430+</h3>
+<p>Etkinlik</p>
+</div>
+
+<div class="stat-box">
+<h3>Private</h3>
+<p>Community</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
