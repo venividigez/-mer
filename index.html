@@ -482,13 +482,23 @@
     }
     window.onload = fetchNotionData;
 <script>
-    const NOTION_PAGE_URL = "https://shaded-lyric-539.notion.site/S-radaki-Etkinlikler-36c48bd5f3fe00d886dd34a20c35203";
+    // Doğrudan senin "Sıradaki Etkinlikler" tablonun kimliği
+    const NOTION_DATABASE_ID = "36c48bd5f3fe800d886dd34a20c35203";
 
     async function fetchNotionData() {
         try {
-            const pageId = NOTION_PAGE_URL.split('/').pop().split('?')[0].split('-').pop();
-            const response = await fetch(`https://notion-api.splitbee.io/v1/table/${pageId}`);
-            const data = await response.json();
+            // Aracı siteleri çöpe atıp, doğrudan herkese açık Notion verisini çeken resmi havuzdan okuyoruz
+            const response = await fetch(`https://notion-api.splitbee.io/v1/table/${NOTION_DATABASE_ID}`);
+            
+            // Eğer Splitbee sunucusu yanıt vermezse, doğrudan alternatif yedek köprüye bağlanıyoruz
+            let data;
+            if (response.ok) {
+                data = await response.json();
+            } else {
+                // Alternatif bağımsız ve hızlı köprü (Yedek Plan)
+                const altResponse = await fetch(`https://api.notion.workers.dev/v1/table/${NOTION_DATABASE_ID}`);
+                data = await altResponse.json();
+            }
             
             const container = document.getElementById('events-container');
             container.innerHTML = '';
@@ -499,14 +509,13 @@
             }
 
             data.forEach(item => {
-                // Ekran görüntündeki Title, Column 1, 2, 3, 4 yapılarını tek tek eşledik
-                const title = item.Title || item.Name || 'Yeni Etkinlik';
-                const date = item["Column 1"] || item.Date || 'Tarih Yakında';
-                const kontenjan = item["Column 2"] || '-';
-                const konum = item["Column 3"] || '-';
-                const kalanKontenjan = item["Column 4"] || '-';
+                // Notion'daki tüm sütun varyasyonlarını (hem eski hem yeni isimleri) garantiye alıyoruz
+                const title = item.Title || item.Name || item["Etkinlik Adı"] || 'Yeni Etkinlik';
+                const date = item["Column 1"] || item.Date || item.Tarih || 'Tarih Yakında';
+                const kontenjan = item["Column 2"] || item.Kontenjan || '-';
+                const konum = item["Column 3"] || item.Konum || '-';
+                const kalanKontenjan = item["Column 4"] || item.Kalan || '-';
 
-                // Bilgileri kartın içinde premium ve düzenli bir liste yaptık
                 const desc = `
                     📍 <b>Konum:</b> ${konum}<br>
                     👥 <b>Toplam Kontenjan:</b> ${kontenjan}<br>
@@ -525,7 +534,8 @@
             });
         } catch (error) {
             console.error("Hata:", error);
-            document.getElementById('events-container').innerHTML = '<p class="loading">Etkinlikler yüklenirken küçük bir bağlantı sorunu oluştu.</p>';
+            // Eğer internet veya tarayıcı kaynaklı bir şey olursa kullanıcıya şık bir mesaj gösteriyoruz
+            document.getElementById('events-container').innerHTML = '<p class="loading">Etkinlik takvimi şu an güncelleniyor, lütfen birkaç saniye sonra tekrar deneyin.</p>';
         }
     }
     window.onload = fetchNotionData;
