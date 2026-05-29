@@ -61,18 +61,20 @@
         </div>
     </div>
 
-    <header class="hero">
-        <div class="video-container">
-            <video src="assets/videos/acilis.mp4" autoplay muted loop playsinline></video>
-            <div class="video-overlay"></div>
+    <header class="hero" style="position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden;">
+        
+        <div class="video-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;">
+            <video src="assets/videos/acilis.mp4" autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;"></video>
+            <div class="video-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(18, 18, 18, 0.7);"></div>
         </div>
         
-        <div class="hero-content">
-            <h1 class="reveal-text">Çevreni Değiştir,<br><span class="text-gold">Hayatın Değişsin.</span></h1>
-            <p class="hero-sub reveal-text">Sıradan bir etkinlik değil, seçkin bir yaşam tarzı.</p>
+        <div class="hero-content" style="position: relative; z-index: 1; padding: 0 20px;">
+            <h1 class="reveal-text" style="color: #fff; font-family: 'Playfair Display', serif; font-size: 3.5rem; margin: 0; line-height: 1.2;">Çevreni Değiştir,<br><span class="text-gold" style="color: #C5A059;">Hayatın Değişsin.</span></h1>
+            <p class="hero-sub reveal-text" style="font-size: 1.2rem; margin: 20px 0 40px 0; color: #ccc;">Sıradan bir etkinlik değil, seçkin bir yaşam tarzı.</p>
+            
             <div class="hero-buttons reveal-text">
-                <a href="#apply" class="btn-gold">Başvuru Yap</a>
-                <a href="#moments" class="btn-glass">Etkinlikleri Gör</a>
+                <a href="#apply" class="btn-gold" style="display: inline-block; color: #121212; background-color: #C5A059; text-decoration: none; padding: 15px 30px; font-weight: 600; border-radius: 4px; margin-right: 15px; transition: 0.3s;">Başvuru Yap</a>
+                <a href="#moments" class="btn-glass" style="display: inline-block; color: #fff; border: 1px solid #fff; text-decoration: none; padding: 15px 30px; font-weight: 600; border-radius: 4px; background: rgba(255,255,255,0.05); backdrop-filter: blur(5px); transition: 0.3s;">Etkinlikleri Gör</a>
             </div>
         </div>
     </header>
