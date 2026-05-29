@@ -433,79 +433,41 @@
             </p>
     </footer>
 <script>
-    const NOTION_DATABASE_ID = "36c48bd5f3fe800d886dd34a20c35203";
+    // Bu, senin Notion verini anlık olarak sitene taşıyan güvenli hattımız
+    const VVG_API = "https://notion-api.splitbee.io/v1/table/36c48bd5f3fe800d886dd34a20c35203";
 
-    async function fetchNotionData() {
-        const container = document.getElementById('events-container');
-        if (!container) return;
-        
-        let data = null;
-
-        // 1. ANA KÖPRÜ: Cloudflare Workers (Çok daha hızlı ve stabil)
+    async function loadEvents() {
         try {
-            const res = await fetch(`https://api.notion.workers.dev/v1/table/${NOTION_DATABASE_ID}`);
-            if (res.ok) data = await res.json();
-        } catch (e) {
-            console.warn("Ana köprüde anlık yoğunluk, yedeğe geçiliyor...");
+            const response = await fetch(VVG_API);
+            const events = await response.json();
+            const container = document.getElementById('events-container');
+            container.innerHTML = ''; // Temizle
+
+            events.forEach(item => {
+                // Notion'daki sütun isimlerini buraya eşleştirdik
+                const name = item.Name || item.Title || "Yeni Etkinlik";
+                const date = item.Date || "Tarih Belirtilmemiş";
+                const location = item["Column 3"] || "Belirtilmemiş";
+                const capacity = item["Column 2"] || "-";
+
+                const card = document.createElement('div');
+                card.className = 'event-card';
+                card.innerHTML = `
+                    <div class="event-date">${date}</div>
+                    <h3 class="event-title">${name}</h3>
+                    <p class="event-desc">
+                        📍 <b>Konum:</b> ${location}<br>
+                        👥 <b>Kontenjan:</b> ${capacity}
+                    </p>
+                    <a href="#" class="btn" style="margin-top: 10px;">Detayları İncele</a>
+                `;
+                container.appendChild(card);
+            });
+        } catch (err) {
+            console.error("Veri akışında küçük bir aksaklık:", err);
         }
-
-        // 2. YEDEK KÖPRÜ: Splitbee (Sadece ana köprü çökerse ve güvenlik duvarını aşarsa çalışır)
-        if (!data || data.length === 0) {
-            try {
-                const res2 = await fetch(`https://notion-api.splitbee.io/v1/table/${NOTION_DATABASE_ID}`);
-                if (res2.ok) data = await res2.json();
-            } catch (e) {
-                console.warn("Yedek köprü yanıt vermedi.");
-            }
-        }
-
-        // İki köprü de çökerse premium tasarıma uygun zarif bir hata mesajı
-        if (!data || data.length === 0) {
-            container.innerHTML = '<p class="loading" style="color:#C5A059;">Etkinlik takvimi anlık olarak güncelleniyor, lütfen birazdan tekrar deneyin.</p>';
-            return;
-        }
-
-        container.innerHTML = '';
-        
-        // Notion'daki o test/rehber satırını (Etkinlik Adı yazanı) gizliyoruz
-        const realEvents = data.filter(item => {
-            const titleText = item.Name || item.Title || '';
-            return titleText && titleText !== 'Etkinlik Adı';
-        });
-
-        if (realEvents.length === 0) {
-            container.innerHTML = '<p class="loading" style="color:#C5A059;">Yakında yepyeni Veni Vidi Gez etkinlikleri burada olacak.</p>';
-            return;
-        }
-
-        // Gerçek verileri o şık siyah-altın kartlara döküyoruz
-        realEvents.forEach(item => {
-            const title = item.Name || 'Yeni Etkinlik';
-            const date = item.Date || 'Tarih Yakında';
-            const kontenjan = item.Description || '-'; 
-            const konum = item["Column 3"] || '-';
-            const kalanKontenjan = item["Column 4"] || '-';
-
-            const desc = `
-                📍 <b>Konum:</b> ${konum}<br>
-                👥 <b>Toplam Kontenjan:</b> ${kontenjan}<br>
-                🔥 <b>Kalan Yer:</b> ${kalanKontenjan}
-            `;
-
-            const card = document.createElement('div');
-            card.className = 'event-card';
-            card.innerHTML = `
-                <div class="event-date">${date}</div>
-                <h3 class="event-title">${title}</h3>
-                <p class="event-desc" style="line-height: 1.8;">${desc}</p>
-                <a href="#" class="btn" style="margin-top: 10px;">Detayları İncele</a>
-            `;
-            container.appendChild(card);
-        });
     }
-    
-    // Sayfa yüklenir yüklenmez dış hatalardan etkilenmeden güvenle çalışması için tetikleyici
-    window.addEventListener('load', fetchNotionData);
+    window.addEventListener('load', loadEvents);
 </script>
 </body>
 </html>
