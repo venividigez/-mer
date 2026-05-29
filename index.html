@@ -432,42 +432,28 @@
                 <a href="#" style="color: rgba(255, 255, 255, 0.3); text-decoration: underline;">KVKK & Gizlilik Politikası</a>
             </p>
     </footer>
+<div id="events-container">
+    </div>
+
 <script>
-    // Bu, senin Notion verini anlık olarak sitene taşıyan güvenli hattımız
-    const VVG_API = "https://notion-api.splitbee.io/v1/table/36c48bd5f3fe800d886dd34a20c35203";
+    // Etkinlikleri buraya bir kez yaz, bir daha asla kodla uğraşma
+    const events = [
+        { title: "Fethiye Aktivite Tatili", date: "1 Temmuz", location: "Fethiye", quota: "80 Kişi" }
+    ];
 
-    async function loadEvents() {
-        try {
-            const response = await fetch(VVG_API);
-            const events = await response.json();
-            const container = document.getElementById('events-container');
-            container.innerHTML = ''; // Temizle
+    const container = document.getElementById('events-container');
+    container.innerHTML = '';
 
-            events.forEach(item => {
-                // Notion'daki sütun isimlerini buraya eşleştirdik
-                const name = item.Name || item.Title || "Yeni Etkinlik";
-                const date = item.Date || "Tarih Belirtilmemiş";
-                const location = item["Column 3"] || "Belirtilmemiş";
-                const capacity = item["Column 2"] || "-";
-
-                const card = document.createElement('div');
-                card.className = 'event-card';
-                card.innerHTML = `
-                    <div class="event-date">${date}</div>
-                    <h3 class="event-title">${name}</h3>
-                    <p class="event-desc">
-                        📍 <b>Konum:</b> ${location}<br>
-                        👥 <b>Kontenjan:</b> ${capacity}
-                    </p>
-                    <a href="#" class="btn" style="margin-top: 10px;">Detayları İncele</a>
-                `;
-                container.appendChild(card);
-            });
-        } catch (err) {
-            console.error("Veri akışında küçük bir aksaklık:", err);
-        }
-    }
-    window.addEventListener('load', loadEvents);
+    events.forEach(item => {
+        container.innerHTML += `
+            <div class="event-card" style="border: 1px solid #C5A059; padding: 20px; margin: 10px; color: #fff;">
+                <div class="event-date" style="color: #C5A059;">${item.date}</div>
+                <h3 class="event-title">${item.title}</h3>
+                <p>📍 Konum: ${item.location} <br> 👥 Kontenjan: ${item.quota}</p>
+                <a href="#" class="btn">Detayları İncele</a>
+            </div>
+        `;
+    });
 </script>
 </body>
 </html>
