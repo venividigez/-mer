@@ -436,24 +436,32 @@
     </div>
 
 <script>
-    // Etkinlikleri buraya bir kez yaz, bir daha asla kodla uğraşma
-    const events = [
-        { title: "Fethiye Aktivite Tatili", date: "1 Temmuz", location: "Fethiye", quota: "80 Kişi" }
-    ];
+    // Notion'daki o "Sıradaki Etkinlikler" tablonun sonundaki ID
+    const DATABASE_ID = "36c48bd5f3fe800d886dd34a20c35203";
 
-    const container = document.getElementById('events-container');
-    container.innerHTML = '';
+    async function fetchFromNotion() {
+        try {
+            // Bu link, Notion verini otomatik olarak siten için bir API'ye çevirir
+            const response = await fetch(`https://api.notion.workers.dev/v1/table/${DATABASE_ID}`);
+            const data = await response.json();
+            
+            const container = document.getElementById('events-container');
+            container.innerHTML = '';
 
-    events.forEach(item => {
-        container.innerHTML += `
-            <div class="event-card" style="border: 1px solid #C5A059; padding: 20px; margin: 10px; color: #fff;">
-                <div class="event-date" style="color: #C5A059;">${item.date}</div>
-                <h3 class="event-title">${item.title}</h3>
-                <p>📍 Konum: ${item.location} <br> 👥 Kontenjan: ${item.quota}</p>
-                <a href="#" class="btn">Detayları İncele</a>
-            </div>
-        `;
-    });
+            data.forEach(item => {
+                container.innerHTML += `
+                    <div class="event-card">
+                        <h3>${item.Name || 'Yeni Etkinlik'}</h3>
+                        <p>📍 ${item.Konum || 'Konum belirtilmedi'}</p>
+                        <p>📅 ${item.Date || 'Tarih belirtilmedi'}</p>
+                    </div>
+                `;
+            });
+        } catch (e) {
+            console.log("Notion bağlantısı bekleniyor...");
+        }
+    }
+    fetchFromNotion();
 </script>
 </body>
 </html>
