@@ -277,253 +277,84 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>VVG | Journal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VVG | Sosyal Etkinlik Topluluğu</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 </head>
+<body style="background-color: #121212; color: #fff; margin: 0; font-family: 'Inter', sans-serif;">
 
-<!-- Mevcut Manifesto Alanına Dokunma -->
-<!-- Yeni metni "Topluluk Mimarı'nın Notu" olarak alt bölüme ekle -->
+    <nav class="glass-nav" style="display: flex; justify-content: space-between; align-items: center; padding: 20px; position: fixed; top: 0; left: 0; width: 100%; z-index: 9999; background: rgba(18, 18, 18, 0.7); backdrop-filter: blur(10px);">
+        <div style="color: #fff; font-size: 1.5rem; font-weight: bold;">VVG</div>
+        <div style="display: flex; gap: 20px; align-items: center;">
+            <div id="vvg-clock" style="color: #C5A059; font-family: monospace;"></div>
+            <a href="#apply" style="color: #D4AF37; text-decoration: none; border: 1px solid #D4AF37; padding: 8px 15px; border-radius: 4px;">Başvuru</a>
+        </div>
+    </nav>
 
-<section style="padding: 40px 20px; background-color: #121212; border-top: 1px solid #333; text-align: center;">
-    <p style="color: #D4AF37; font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase;">Topluluk Mimarı'ndan Not</p>
-    <p style="color: #fff; font-family: 'Playfair Display'; font-style: italic; margin-top: 15px; font-size: 1.2rem;">
-        "VVG'de arkadaşlık bir rastlantı değil, ortak bir vizyonun sonucudur."
-    </p>
-</section>
+    <header class="hero" style="padding: 150px 20px; text-align: center;">
+        <h1 style="color: #fff; font-family: 'Playfair Display', serif; font-size: 3rem;">Çevreni Değiştir,<br><span style="color: #C5A059;">Hayatın Değişsin.</span></h1>
+    </header>
 
-   </a>
-</div>
-    <!-- SSS -->
-    <section id="faq" class="apply-section" style="padding-top: 50px;">
-        <div style="max-width: 800px; margin: 0 auto; width: 100%;">
-            <h3 class="section-title text-center gsap-reveal" style="margin-bottom: 40px;">Sıkça Sorulan Sorular</h3>
-            
-            <div class="faq-wrapper gsap-reveal" style="display: flex; flex-direction: column; gap: 15px;">
-                <details style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; cursor: pointer; transition: all 0.3s ease;">
-                    <summary style="padding: 20px; color: #fff; font-size: 1.1rem; font-weight: 500; outline: none; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-                        VVG etkinliklerine herkes katılabilir mi?
-                        <span style="color: #D4AF37;">+</span>
-                    </summary>
-                    <div style="padding: 0 20px 20px 20px; color: #a1a1a6; font-size: 0.95rem; line-height: 1.6; border-top: 1px solid rgba(255, 255, 255, 0.05); margin-top: 10px; padding-top: 15px;">
-                        Hayır. VVG, kapalı bir sosyal etkinlik topluluğudur. Ağımızın kalitesini korumak adına tüm başvurular LinkedIn profili veya içeriden referans yoluyla yönetim ekibimiz tarafından değerlendirilmektedir.
-                    </div>
-                </details>
+    <section id="manifesto" style="padding: 60px 20px; text-align: center;">
+        <h2 style="font-family: 'Playfair Display'; color: #fff;">"Herkesle değil, doğru insanlarla tanış."</h2>
+        <p style="color: #a0a0a0;">81 şehir, tek frekans.</p>
+    </section>
 
-                <details style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; cursor: pointer; transition: all 0.3s ease;">
-                    <summary style="padding: 20px; color: #fff; font-size: 1.1rem; font-weight: 500; outline: none; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-                        Başvuru süreci nasıl işler?
-                        <span style="color: #D4AF37;">+</span>
-                    </summary>
-                    <div style="padding: 0 20px 20px 20px; color: #a1a1a6; font-size: 0.95rem; line-height: 1.6; border-top: 1px solid rgba(255, 255, 255, 0.05); margin-top: 10px; padding-top: 15px;">
-                        Sitemiz üzerinden doldurduğunuz form ekibimize ulaşır. Vizyonumuzla ve hedef kitlemizle uyumlu bulunan adaylarla iletişime geçilir ve yaklaşan ilk tanışma konseptli etkinliklerimize davet edilirler.
-                    </div>
-                </details>
+    <div class="container" style="max-width: 1000px; margin: 50px auto; padding: 20px;">
+        <h2 style="text-align: center; color: #C5A059;">Sıradaki Etkinlikler</h2>
+        <div class="events-grid" id="events-container">
+            <p style="text-align: center; color: #a0a0a0;">Etkinlikler güncelleniyor...</p>
+        </div>
+    </div>
 
-                <details style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; cursor: pointer; transition: all 0.3s ease;">
-                    <summary style="padding: 20px; color: #fff; font-size: 1.1rem; font-weight: 500; outline: none; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-                        Etkinliklerde yaş veya meslek grupları karışık mı oluyor?
-                        <span style="color: #D4AF37;">+</span>
-                    </summary>
-                    <div style="padding: 0 20px 20px 20px; color: #a1a1a6; font-size: 0.95rem; line-height: 1.6; border-top: 1px solid rgba(255, 255, 255, 0.05); margin-top: 10px; padding-top: 15px;">
-                        Hayır. Topluluğumuz profesyonel statüye göre segmente edilmiştir. Üniversite mezunları/genç profesyoneller ile öğrenciler, kendi dinamiklerine uygun olarak ayrı gruplandırılır ve etkinlikler bu homojen yapıya göre planlanır.
-                    </div>
-                </details>
+    <section id="calendar-section" style="padding: 40px 20px; text-align: center;">
+        <details style="max-width: 800px; margin: 0 auto; border: 1px solid #333; background: #1a1a1a; cursor: pointer; border-radius: 8px;">
+            <summary style="padding: 20px; color: #C5A059; font-family: 'Playfair Display'; font-size: 1.2rem; outline: none;">ETKİNLİK TAKVİMİNİ GÖRÜNTÜLE ▾</summary>
+            <div style="padding: 20px;"><iframe src="https://calendar.google.com/calendar/embed?src=venividigez%40gmail.com&ctz=Europe%2FIstanbul" style="border: 0; filter: invert(90%) hue-rotate(180deg) brightness(1.2);" width="100%" height="500" frameborder="0"></iframe></div>
+        </details>
+    </section>
 
-                <details style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; cursor: pointer; transition: all 0.3s ease;">
-                    <summary style="padding: 20px; color: #fff; font-size: 1.1rem; font-weight: 500; outline: none; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-                        Sadece lokal buluşmalar mı düzenleniyor?
-                        <span style="color: #D4AF37;">+</span>
-                    </summary>
-                    <div style="padding: 0 20px 20px 20px; color: #a1a1a6; font-size: 0.95rem; line-height: 1.6; border-top: 1px solid rgba(255, 255, 255, 0.05); margin-top: 10px; padding-top: 15px;">
-                        Vizyonumuz çok daha geniş. Lokal networking buluşmalarının yanı sıra, VVG Escapes konseptimizle Temmuz ayındaki 80 kişilik Fethiye tatili gibi geniş çaplı, ulusal düzeyde seyahat ve deneyim organizasyonları da gerçekleştiriyoruz.
-                    </div>
-                </details>
-
-                <details style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; cursor: pointer; transition: all 0.3s ease;">
-                    <summary style="padding: 20px; color: #fff; font-size: 1.1rem; font-weight: 500; outline: none; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-                        Etkinliklere dışarıdan misafir getirebilir miyim?
-                        <span style="color: #D4AF37;">+</span>
-                    </summary>
-                    <div style="padding: 0 20px 20px 20px; color: #a1a1a6; font-size: 0.95rem; line-height: 1.6; border-top: 1px solid rgba(255, 255, 255, 0.05); margin-top: 10px; padding-top: 15px;">
-                        Topluluk içi dinamiği ve güveni korumak en büyük önceliğimizdir. Bu nedenle, önceden yönetim onayı alınmamış veya başvuru sürecinden geçmemiş misafirlerin etkinliklerimize katılımı maalesef mümkün değildir.
-                    </div>
-                </details>
-            </div>
+    <section id="architect" style="padding: 80px 20px;">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <h3 style="color: #D4AF37; letter-spacing: 3px;">TOPLULUK MİMARI</h3>
+            <h2 style="font-family: 'Playfair Display'; font-size: 2.5rem;">Ömer Beker</h2>
+            <p style="font-style: italic; color: #a0a0a0;">"VVG'de arkadaşlık bir rastlantı değil, ortak bir vizyonun sonucudur."</p>
         </div>
     </section>
 
-
-
-    <!-- 5. Başvuru Bölümü -->
-    <section id="apply" class="apply-section">
-        <div class="glass-form-container gsap-reveal">
-            <h2 class="text-gold">Topluluğa Katıl</h2>
-            <p>VVG herkese açık değildir. Başvurunuz yönetim ekibimiz tarafından incelenecektir.</p>
-            
-            <div class="premium-form" style="margin-top: 30px;">
-                <a href="https://forms.gle/AvxsHnuWCu1ib8Dw6" target="_blank" class="btn-gold w-100" style="display: block; text-align: center; text-decoration: none; padding: 15px;">
-                    Başvuru Formunu Aç
-                </a>
-            </div>
-        </div>
+    <section id="faq" style="padding: 50px 20px; max-width: 800px; margin: 0 auto;">
+        <h3 style="text-align: center;">Sıkça Sorulan Sorular</h3>
+        <details style="background: #1a1a1a; padding: 20px; margin-bottom: 10px; border-radius: 8px;">
+            <summary>VVG etkinliklerine herkes katılabilir mi?</summary>
+            <p style="color: #a0a0a0;">Hayır, VVG kapalı bir sosyal etkinlik topluluğudur.</p>
+        </details>
     </section>
 
-    <!-- 6. Bağış ve Ödemeler -->
-    <section id="payment" class="apply-section" style="padding-top: 50px;">
-        <div class="glass-form-container gsap-reveal">
-            <h2 class="text-gold">Bağış ve Ödemeler</h2>
-            <p>Tüm ödemeler, Veni Vidi Gez Derneği resmi hesabına BAĞIŞ olarak yapılmaktadır.</p>
-            
-            <details style="margin-top: 30px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; text-align: left; cursor: pointer; transition: all 0.3s ease;">
-                <summary style="padding: 20px; color: #D4AF37; font-size: 1.1rem; font-weight: 500; outline: none; list-style: none;">
-                    Hesap Bilgilerini Göster / Gizle 
-                </summary>
-                
-                <div style="padding: 0 30px 30px 30px; border-top: 1px solid rgba(255, 255, 255, 0.05); margin-top: 10px; padding-top: 20px;">
-                    <p style="color: #a1a1a6; font-size: 0.85rem; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">Hesap Sahibi</p>
-                    <p style="color: #fff; font-size: 1.1rem; font-weight: 500; margin-bottom: 20px;">Veni Vidi Gez Derneği</p>
-                    
-                    <p style="color: #a1a1a6; font-size: 0.85rem; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">IBAN</p>
-                    <div style="border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-bottom: 10px;">
-                        <span style="color: #D4AF37; font-family: 'Inter', monospace; font-size: 1.1rem; letter-spacing: 1px;">TR91 0001 0023 5197 9988 3650 01</span>
-                    </div>
-                    
-                    <div style="margin-top: 20px; background: rgba(212, 175, 55, 0.05); border-left: 3px solid #D4AF37; padding: 15px; border-radius: 4px;">
-                        <p style="color: #fff; font-size: 0.95rem; font-weight: 500; margin-bottom: 8px;">🏷️ Açıklama: Ad Soyad + BAĞIŞ</p>
-                        <p style="color: #a1a1a6; font-size: 0.85rem; line-height: 1.5;">🧾 Bağış makbuzu kesilebilmesi için bu açıklama zorunludur. Farklı açıklamalar içeren dekontlar kesinlikle kabul edilmeyecektir.</p>
-                    </div>
-                </div>
-            </details>
-        </div>
-    </section>
-
-<!-- WhatsApp İletişim Butonu -->
-<div style="text-align: center; margin: 50px 0;">
-    <a href="https://wa.me/905072764100?text=Merhaba, VVG topluluğuna katılmak ve detaylı bilgi almak istiyorum." 
-       style="display: inline-block; padding: 15px 30px; background-color: #121212; border: 1px solid #C5A059; color: #C5A059; text-decoration: none; font-weight: bold; letter-spacing: 2px; transition: 0.3s;"
-       onmouseover="this.style.backgroundColor='#C5A059'; this.style.color='#121212';" 
-       onmouseout="this.style.backgroundColor='#121212'; this.style.color='#C5A059';">
-       BİZE ULAŞIN
-    </a>
-</div>
-
-    <!-- Footer -->
-   <!-- Footer (Premium Versiyon - Noktasız Logo) -->
-    <footer style="background-color: #0a0a0a; padding: 60px 20px 30px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.05); margin-top: 50px;">
-        <div style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 25px;">
-            
-            <!-- Logo (Noktasız) -->
-            <h2 style="color: #D4AF37; font-family: 'Playfair Display', serif; font-size: 2rem; letter-spacing: 4px; margin: 0;">VVG</h2>
-            
-            <!-- Sosyal Medya & İletişim -->
-            <div style="display: flex; gap: 20px; justify-content: center; align-items: center; flex-wrap: wrap;">
-                <a href="https://www.instagram.com/veni_vidi_gez" target="_blank" style="color: #a1a1a6; text-decoration: none; font-size: 0.95rem; letter-spacing: 1px; transition: color 0.3s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#a1a1a6'">Instagram</a>
-                <span style="color: rgba(255, 255, 255, 0.2);">|</span>
-                <a href="https://youtube.com/@veni_vidi_gez" target="_blank" style="color: #a1a1a6; text-decoration: none; font-size: 0.95rem; letter-spacing: 1px; transition: color 0.3s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#a1a1a6'">YouTube</a>
-                <span style="color: rgba(255, 255, 255, 0.2);">|</span>
-                <a href="https://www.linkedin.com/company/venividigez/" target="_blank" style="color: #a1a1a6; text-decoration: none; font-size: 0.95rem; letter-spacing: 1px; transition: color 0.3s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#a1a1a6'">LinkedIn</a>
-                <span style="color: rgba(255, 255, 255, 0.2);">|</span>
-                <a href="mailto:venividigez@gmail.com" style="color: #D4AF37; text-decoration: none; font-size: 0.95rem; letter-spacing: 1px; transition: opacity 0.3s ease;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">venividigez@gmail.com</a>
-            </div>
-
-            <!-- Copyright & KVKK -->
-            <p style="color: rgba(255, 255, 255, 0.3); font-size: 0.8rem; margin-top: 20px; letter-spacing: 1px;">
-                &copy; 2026 Veni Vidi Gez Tüm Hakları Saklıdır.<br>
-                <a href="#" style="color: rgba(255, 255, 255, 0.3); text-decoration: underline;">KVKK & Gizlilik Politikası</a>
-            </p>
+    <footer style="text-align: center; padding: 50px; background: #0a0a0a; color: #a0a0a0;">
+        <p>&copy; 2026 Veni Vidi Gez - Tüm Hakları Saklıdır.</p>
     </footer>
 
-<script>
-    async function loadEvents() {
-        const container = document.getElementById('events-container');
-        try {
-            const response = await fetch("https://notion-api.splitbee.io/v1/table/36c48bd5f3fe800d886dd34a20c35203");
-            const events = await response.json();
-            container.innerHTML = ''; 
-            events.forEach(event => {
-                if (event.Name) {
-                    container.innerHTML += `
-                        <div class="event-card">
-                            <div class="event-date">${event.Date || 'Tarih Belirtilmemiş'}</div>
-                            <h3>${event.Name}</h3>
-                            <p>📍 Konum: ${event["Column 3"] || '-'}</p>
-                            <p>👥 Kontenjan: ${event.Description || '-'}</p>
-                            <p>🔥 Kalan: ${event["Column 4"] || '-'}</p>
-                        </div>
-                    `;
-                }
-            });
-        } catch (err) {
-            console.log("Notion bağlantısı hata verdi, manuel kontrole geçildi.");
+    <script>
+        function updateVVGClock() {
+            const now = new Date();
+            document.getElementById('vvg-clock').innerHTML = now.toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' });
         }
-    }
-    loadEvents();
+        setInterval(updateVVGClock, 1000);
+        updateVVGClock();
 
-<script>
-    async function loadEvents() {
-        const container = document.getElementById('events-container');
-        try {
-            // Notion'dan veriyi çeken köprümüz
-            const response = await fetch("https://notion-api.splitbee.io/v1/table/36c48bd5f3fe800d886dd34a20c35203");
-            const events = await response.json();
-            
-            container.innerHTML = ''; // Önce yükleniyor yazısını temizle
-
-            events.forEach(event => {
-                // Burada Notion'daki sütun isimlerini kontrol ediyoruz
-                // Notion'da sütunların adının Name, Date, Description, Column 3 ve Column 4 olduğundan emin ol
-                if (event.Name) {
-                    container.innerHTML += `
-                        <div class="event-card">
-                            <div class="event-date">${event.Date || 'Tarih Belirtilmemiş'}</div>
-                            <h3 class="event-title">${event.Name}</h3>
-                            <p class="event-desc">
-                                📍 Konum: ${event["Column 3"] || '-'}<br>
-                                👥 Kontenjan: ${event.Description || '-'}<br>
-                                🔥 Kalan: ${event["Column 4"] || '-'}
-                            </p>
-                            <a href="#" class="btn">Detayları İncele</a>
-                        </div>
-                    `;
-                }
-            });
-        } catch (err) {
-            console.error("Veri akışı hatası:", err);
-            container.innerHTML = '<p class="loading">Etkinlikler şu an güncelleniyor...</p>';
+        async function loadEvents() {
+            try {
+                const res = await fetch("https://notion-api.splitbee.io/v1/table/36c48bd5f3fe800d886dd34a20c35203");
+                const events = await res.json();
+                const container = document.getElementById('events-container');
+                container.innerHTML = '';
+                events.forEach(e => {
+                    if (e.Name) container.innerHTML += `<div class="event-card"><h3>${e.Name}</h3><p>📍 ${e["Column 3"] || '-'}</p></div>`;
+                });
+            } catch(e) { console.log("Veri çekilemedi."); }
         }
-    }
-    
-    // Sayfa yüklendiği an çalıştır
-    window.addEventListener('load', loadEvents);
-
-<section id="calendar-section" style="background-color: #121212; padding: 50px 20px; text-align: center;">
-    <h2 style="color: #C5A059; margin-bottom: 30px; letter-spacing: 4px; text-transform: uppercase;">ETKİNLİK TAKVİMİ</h2>
-    
-    <div class="calendar-wrapper" style="max-width: 800px; margin: 0 auto; border: 1px solid #333; padding: 10px; background: #1a1a1a;">
-        <iframe src="https://calendar.google.com/calendar/embed?src=venividigez%40gmail.com&ctz=Europe%2FIstanbul" 
-                style="border: 0; filter: invert(90%) hue-rotate(180deg) brightness(1.2);" 
-                width="100%" height="500" frameborder="0" scrolling="no">
-        </iframe>
-    </div>
-</section>
-</script>
-<script src="https://apis.google.com/js/api.js"></script>
-<script>
-    <section id="calendar-section" style="background-color: #121212; padding: 40px 20px; text-align: center;">
-    <details style="max-width: 800px; margin: 0 auto; border: 1px solid #333; background: #1a1a1a; cursor: pointer; transition: 0.3s;">
-        
-        <summary style="padding: 20px; color: #C5A059; font-family: 'Playfair Display', serif; font-size: 1.2rem; outline: none; list-style: none; letter-spacing: 2px;">
-            ETKİNLİK TAKVİMİNİ GÖRÜNTÜLE ▾
-        </summary>
-
-        <div class="calendar-wrapper" style="padding: 20px; background: #121212;">
-            <iframe src="https://calendar.google.com/calendar/embed?src=venividigez%40gmail.com&ctz=Europe%2FIstanbul" 
-                    style="border: 0; filter: invert(90%) hue-rotate(180deg) brightness(1.2);" 
-                    width="100%" height="500" frameborder="0" scrolling="no">
-            </iframe>
-        </div>
-        
-    </details>
-</section>
+        loadEvents();
+    </script>
 </body>
 </html>
